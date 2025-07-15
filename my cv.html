@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Developer CV</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <style>.profile-pic {
+  width: 200px;         /* Adjust size as needed */
+  height: 200px;
+  border-radius: 50%;   /* Make it circular; remove for square */
+  overflow: hidden;
+  border: 2px solid #ccc;  /* Optional border */
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Ensures image covers entire container */
+  display: block;        /* Removes default inline spacing */
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Container */
+.cv-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 30%;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+}
+
+.sidebar .title {
+  color: #58a6ff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: url('https://via.placeholder.com/120') no-repeat center/cover;
+  margin: 0 auto;
+  border: 3px solid #58a6ff;
+}
+
+.contact-info li,
+.languages li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.skills {
+  list-style: none;
+}
+
+.skills li {
+  margin-bottom: 1rem;
+}
+
+.skills span {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.bar {
+  background: #333;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 100%;
+  background: #58a6ff;
+  transition: width 0.4s ease-in-out;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  width: 70%;
+  padding: 3rem;
+  background: #fff;
+}
+
+.main-content section {
+  margin-bottom: 2.5rem;
+}
+
+.main-content h2 {
+  font-size: 1.4rem;
+  border-left: 4px solid #58a6ff;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.main-content p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.job h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.job h3 span {
+  color: #666;
+  font-weight: 400;
+}
+
+.job .date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.job ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.job ul li {
+  list-style: disc;
+  margin-bottom: 0.5rem;
+}
+
+.projects li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* THEME TOGGLE BUTTON */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+#theme-toggle:hover {
+  background: #444;
+}
+
+/* DOWNLOAD BUTTON */
+#download-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #0d1117;
+  color: #d1d5db;
+}
+
+body.dark .main-content {
+  background: #161b22;
+}
+
+body.dark .sidebar {
+  background: #0d1117;
+}
+
+body.dark .bar div {
+  background: #2f81f7;
+}
+
+body.dark .main-content h2 {
+  color: #fff;
+  border-color: #2f81f7;
+}
+
+body.dark #theme-toggle {
+  background: #58a6ff;
+  color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+  }
+
+  .sidebar, .main-content {
+    width: 100%;
+  }
+
+  .sidebar {
+    text-align: center;
+  }
+
+  #download-btn, #theme-toggle {
+    position: static;
+    margin: 1rem auto;
+    display: block;
+  }
+}
+</style>
+
+  <div class="cv-container">
+    <aside class="sidebar">
+      <div class="profile-pic"><img src="pic.png"></div>
+      <h1>Prince Joseph</h1>
+      <p class="title">Full-Stack Web Developer</p>
+      <p class="location">📍 Protea Glen, Soweto, Gauteng, SA</p>
+
+      <h3>Contact</h3>
+      <ul class="contact-info">
+        <li>📧 pringletexh063@gmail.com</li>
+        <li>📞 +27 63 063 2630</li>
+        
+        <li>💼 github.com/pringletexh</li>
+      </ul>
+
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li><span>HTML</span><div class="bar"><div style="width: 100%"></div></div></li>
+        <li><span>CSS / SASS</span><div class="bar"><div style="width: 100%"></div></div></li>
+        <li><span>JavaScript</span><div class="bar"><div style="width: 90%"></div></div></li>
+        <li><span>React / Vue</span><div class="bar"><div style="width: 85%"></div></div></li>
+        <li><span>Node.js</span><div class="bar"><div style="width: 80%"></div></div></li>
+      </ul>
+
+      <h3>Languages</h3>
+      <ul class="languages">
+        <li>English – SA</li>
+        <li>Zulu</li>
+        <li>Tshivenda</li>
+        <li>Sesotho</li>
+        <li>Sepedi</li>
+        <li>Afrikaans</li>
+        <li>Tsonga</li>
+        <li>Xhosa</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <section>
+        <h2>About Me</h2>
+        <p>
+          Passionate and creative web developer with 2+ years of experience in building responsive websites and applications. Specializing in front-end technologies and UX/UI design, with a solid understanding of back-end architecture.
+        </p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="job">
+          <h3>Senior Front-End Developer <span></span></h3>
+          <p class="date">2023 – Present</p>
+          <ul>
+            <li>Developed and maintained web apps using React and Tailwind CSS</li>
+            <li>Improved performance of large-scale dashboards by 45%</li>
+            <li>Mentored 3 junior developers</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Web Developer <span></span></h3>
+          <font color="red"><p class="date">2023 – 2025</p></font>
+          <ul>
+            <li>Built dynamic websites using HTML, CSS, JS, and PHP</li>
+            <li>Integrated third-party APIs and payment gateways</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <ul class="projects">
+          <li><strong>Portfolio Website:</strong> Personal site built with React and GSAP animations (johndoe.dev)</li>
+          <li><strong>TaskTrackee :</strong> Full-stack MERN app for task management</li>
+          <li><strong>Weather:</strong> Real-time weather app using OpenWeatherMap API</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <ul>
+        <p><strong>BSc in Computer Science</strong><br></p>
+        <br>
+        <p><strong>Diploma In Systems Development</strong></p>
+        </ul>
+        <br>
+        <br>
+        <h2>Please Note:</h2>
+        <p><srtong>I Cannot Specify Where I Earned My Cerificates Due To Unpayed Advertising</srtong></p>
+
+      </section>
+    </main>
+  </div>
+  <!-- Add inside <body> before closing -->
+<button id="theme-toggle">🌓 Toggle Theme</button>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+const isDark = localStorage.getItem('theme') === 'dark';
+
+if (isDark) document.body.classList.add('dark');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const theme = document.body.classList.contains('dark') ? 'dark' : 'light';
+  localStorage.setItem('theme', theme);
+});
+</script>
+
+
+</body>
+</html>
